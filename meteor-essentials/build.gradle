@@ -7,19 +7,19 @@ version = "0.1.0"
 repositories {
     maven {
         name = "PlaceholderApi"
-        url = "https://repo.extendedclip.com/releases/"  
+        url = "https://repo.extendedclip.com/releases/"
     }
 }
 
 dependencies {
-    compileOnly 'me.clip:placeholderapi:2.11.6' 
+    compileOnly 'me.clip:placeholderapi:2.11.6'
 
     api "org.reflections:reflections:0.10.2"
     api "meteordevelopment:NBT:0.1.2"
 }
 
 shadowJar {
-    classifier = ""
+    archiveClassifier.set("")
 }
 
 build.dependsOn shadowJar
