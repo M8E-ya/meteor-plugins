@@ -2,23 +2,26 @@ subprojects {
     apply plugin: "java"
     apply plugin: "java-library"
 
-    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
     group = "meteordevelopment"
+
+    java {
+        toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    }
 
     repositories {
         mavenCentral()
         maven {
             name = "papermc"
-            url = "https://papermc.io/repo/repository/maven-public/"
+            url = uri("https://repo.papermc.io/repository/maven-public/")
         }
         maven {
             name = "Meteor Development"
-            url = "https://maven.meteordev.org/releases/"
+            url = uri("https://maven.meteordev.org/releases/")
         }
     }
 
     dependencies {
-        compileOnly "io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT"
+        compileOnly "io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT"
     }
 
     processResources {
