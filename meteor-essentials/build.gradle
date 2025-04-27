@@ -19,7 +19,7 @@ dependencies {
 }
 
 shadowJar {
-    classifier = ""
+    archiveClassifier.set("")
 }
 
 build.dependsOn shadowJar
